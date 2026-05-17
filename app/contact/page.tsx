@@ -83,12 +83,9 @@ export default function ContactPage() {
                 className="w-full resize-none border-b border-border bg-transparent py-3 text-sm outline-none transition-colors focus:border-foreground"
               />
             </div>
-            <button
-              type="submit"
-              className="group inline-flex items-center gap-4 border border-foreground px-8 py-4 text-sm font-medium tracking-wide transition-colors hover:bg-foreground hover:text-background"
-            >
+            <button type="submit" className="btn-primary group">
               Send message
-              <span className="h-px w-8 bg-accent transition-all group-hover:w-12" />
+              <span className="btn-accent-line" aria-hidden />
             </button>
           </form>
         </div>

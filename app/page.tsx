@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ApplicationsGrid } from "@/components/ui/ApplicationsGrid";
 import { CTASection } from "@/components/ui/CTASection";
 import { Hero } from "@/components/ui/Hero";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionContainer } from "@/components/ui/SectionContainer";
 import { SolutionsList } from "@/components/ui/SolutionsList";
 import { TechnologiesGrid } from "@/components/ui/TechnologiesGrid";
@@ -23,24 +24,24 @@ export default function Home() {
         secondaryCta={{ label: "Contact", href: "/contact" }}
       />
 
-      <SectionContainer>
-        <p className="max-w-4xl text-2xl font-medium leading-snug tracking-tight text-foreground md:text-3xl lg:text-4xl">
-          We engineer deposition platforms, robotic cells and material formulations
-          that connect digital design to physical production at architectural scale.
-        </p>
+      <SectionContainer reveal={false}>
+        <Reveal>
+          <p className="max-w-4xl text-[1.625rem] font-medium leading-[1.2] tracking-[-0.03em] text-foreground md:text-4xl md:leading-[1.15] lg:text-[2.75rem] lg:leading-[1.12]">
+            We engineer deposition platforms, robotic cells and material formulations
+            that connect digital design to physical production at architectural scale.
+          </p>
+        </Reveal>
       </SectionContainer>
 
       <SectionContainer id="technologies" border>
-        <div className="mb-16 flex flex-col gap-6 md:mb-20 md:flex-row md:items-end md:justify-between">
+        <div className="mb-20 flex flex-col gap-8 md:mb-24 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-muted">
-              Technologies
-            </p>
-            <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
+            <p className="section-label mb-5">Technologies</p>
+            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl">
               Core capabilities
             </h2>
           </div>
-          <p className="max-w-md text-sm leading-relaxed text-muted">
+          <p className="max-w-sm text-sm leading-[1.7] text-muted md:text-base">
             Integrated hardware, software and materials developed for demanding
             built-environment applications.
           </p>
@@ -49,11 +50,9 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer id="solutions" border className="bg-surface">
-        <div className="mb-16 md:mb-20">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Solutions
-          </p>
-          <h2 className="max-w-2xl text-3xl font-medium tracking-tight md:text-4xl">
+        <div className="mb-20 md:mb-24">
+          <p className="section-label mb-5">Solutions</p>
+          <h2 className="max-w-3xl text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl lg:leading-[1.1]">
             From design studios to construction sites and industrial floors
           </h2>
         </div>
@@ -61,11 +60,9 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer id="applications" border>
-        <div className="mb-16 md:mb-20">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            Applications
-          </p>
-          <h2 className="max-w-xl text-3xl font-medium tracking-tight md:text-4xl">
+        <div className="mb-20 md:mb-24">
+          <p className="section-label mb-5">Applications</p>
+          <h2 className="max-w-xl text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl">
             Where our systems operate
           </h2>
         </div>
@@ -73,16 +70,14 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer border className="bg-surface">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="grid gap-14 lg:grid-cols-2 lg:gap-28">
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-muted">
-              Research & development
-            </p>
-            <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
+            <p className="section-label mb-5">Research & development</p>
+            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl lg:leading-[1.1]">
               Advancing the science of deposition
             </h2>
           </div>
-          <div className="space-y-6 text-base leading-relaxed text-muted md:text-lg">
+          <div className="space-y-7 text-base leading-[1.7] text-muted md:text-lg">
             <p>
               Our R&D programs focus on material behaviour, process stability and
               scalable automation — bridging laboratory insight with field-ready
@@ -92,12 +87,8 @@ export default function Home() {
               We collaborate with universities, manufacturers and project teams to
               validate new formulations and qualify production workflows.
             </p>
-            <Link
-              href="/research"
-              className="inline-flex items-center gap-3 text-sm font-medium text-foreground transition-colors"
-            >
+            <Link href="/research" className="link-arrow font-medium text-foreground">
               Research programs
-              <span className="h-px w-8 bg-accent" />
             </Link>
           </div>
         </div>

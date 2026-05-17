@@ -11,32 +11,48 @@ type ApplicationsGridProps = {
 export function ApplicationsGrid({ items, showLink = true }: ApplicationsGridProps) {
   return (
     <>
-      <div className="grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
         {items.map((item) => (
           <article
             key={item.id}
-            className="group flex min-h-[220px] flex-col justify-between bg-background p-8 transition-colors hover:bg-surface md:p-10"
+            className="group relative flex min-h-[280px] flex-col justify-between overflow-hidden border border-border bg-background p-9 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:border-foreground/15 hover:shadow-[0_24px_64px_-32px_rgba(0,0,0,0.14)] md:min-h-[300px] md:p-11"
           >
-            <p className="font-mono text-xs text-muted">{item.index}</p>
-            <div>
-              <h3 className="text-lg font-medium tracking-tight md:text-xl">
+            <div
+              className="card-grid pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              aria-hidden
+            />
+            <span
+              className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-accent transition-transform duration-500 group-hover:scale-x-100"
+              aria-hidden
+            />
+
+            <div className="relative flex items-center justify-between">
+              <span className="text-xs font-medium tracking-[0.2em] text-muted">
+                {item.index}
+              </span>
+              <span className="h-1.5 w-1.5 rounded-full bg-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            </div>
+
+            <div className="relative">
+              <h3 className="text-xl font-medium tracking-[-0.02em] text-foreground transition-transform duration-500 group-hover:translate-x-0.5 md:text-2xl">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
+              <p className="mt-4 max-w-[28ch] text-sm leading-[1.65] text-muted">
                 {item.description}
               </p>
-              <span className="mt-6 inline-block h-px w-0 bg-accent transition-all group-hover:w-8" />
+              <span className="mt-8 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-muted opacity-0 transition-all duration-500 group-hover:opacity-100">
+                Explore
+                <span className="h-px w-6 bg-accent" />
+              </span>
             </div>
           </article>
         ))}
       </div>
+
       {showLink && (
-        <div className="mt-10 flex justify-end">
-          <Link
-            href="/applications"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            Explore applications →
+        <div className="mt-12 flex justify-end">
+          <Link href="/applications" className="link-arrow">
+            Explore applications
           </Link>
         </div>
       )}

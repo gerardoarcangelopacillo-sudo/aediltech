@@ -10,29 +10,40 @@ type TechnologiesGridProps = {
 
 export function TechnologiesGrid({ items, showLink = true }: TechnologiesGridProps) {
   return (
-    <div className="divide-y divide-border border-y border-border">
+    <div className="border-y border-border">
       {items.map((item) => (
         <article
           key={item.id}
-          className="group grid gap-6 py-10 transition-colors hover:bg-surface md:grid-cols-12 md:gap-8 md:py-12 md:px-6"
+          className="group relative grid gap-8 border-t border-border py-14 transition-colors duration-500 first:border-t-0 hover:bg-surface md:grid-cols-12 md:items-start md:gap-10 md:py-16 md:pl-2 md:pr-8"
         >
-          <p className="font-mono text-xs text-muted md:col-span-1">{item.index}</p>
-          <h3 className="text-xl font-medium tracking-tight md:col-span-4 md:text-2xl">
-            {item.title}
-          </h3>
-          <p className="text-sm leading-relaxed text-muted md:col-span-6 md:text-base">
+          <span
+            className="absolute left-0 top-0 h-0 w-px bg-accent transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:h-full"
+            aria-hidden
+          />
+
+          <div className="md:col-span-2">
+            <span className="block text-5xl font-medium leading-none tracking-tighter text-border-subtle transition-colors duration-500 group-hover:text-foreground md:text-6xl">
+              {item.index}
+            </span>
+          </div>
+
+          <div className="md:col-span-4">
+            <h3 className="text-xl font-medium tracking-[-0.02em] text-foreground transition-transform duration-500 group-hover:translate-x-1 md:text-2xl lg:text-[1.75rem]">
+              {item.title}
+            </h3>
+            <span className="mt-4 inline-block h-px w-0 bg-accent transition-all duration-500 group-hover:w-10" />
+          </div>
+
+          <p className="text-sm leading-[1.7] text-muted md:col-span-6 md:text-base md:leading-relaxed">
             {item.description}
           </p>
-          <span className="hidden h-px w-6 self-center bg-accent opacity-0 transition-opacity group-hover:opacity-100 md:col-span-1 md:block" />
         </article>
       ))}
+
       {showLink && (
-        <div className="flex justify-end px-6 py-8">
-          <Link
-            href="/technologies"
-            className="text-sm text-muted transition-colors hover:text-foreground"
-          >
-            View all technologies →
+        <div className="flex justify-end px-2 py-10 md:px-8">
+          <Link href="/technologies" className="link-arrow">
+            View all technologies
           </Link>
         </div>
       )}

@@ -56,19 +56,25 @@ export default function ResearchPage() {
       </SectionContainer>
 
       <SectionContainer border className="bg-surface">
-        <div className="divide-y divide-border border-y border-border">
+        <div className="border-y border-border">
           {programs.map((program) => (
             <article
               key={program.index}
-              className="grid gap-6 py-10 md:grid-cols-12 md:gap-8 md:py-12"
+              className="group relative grid gap-8 border-t border-border py-14 first:border-t-0 md:grid-cols-12 md:gap-10 md:py-16"
             >
-              <p className="font-mono text-xs text-muted md:col-span-1">
-                {program.index}
-              </p>
-              <h3 className="text-xl font-medium tracking-tight md:col-span-4 md:text-2xl">
+              <span
+                className="absolute left-0 top-0 h-0 w-px bg-accent transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:h-full"
+                aria-hidden
+              />
+              <div className="md:col-span-2">
+                <span className="block text-5xl font-medium leading-none tracking-tighter text-border-subtle transition-colors duration-500 group-hover:text-foreground md:text-6xl">
+                  {program.index}
+                </span>
+              </div>
+              <h3 className="text-xl font-medium tracking-[-0.02em] md:col-span-4 md:text-2xl">
                 {program.title}
               </h3>
-              <p className="text-sm leading-relaxed text-muted md:col-span-7 md:text-base">
+              <p className="text-sm leading-[1.7] text-muted md:col-span-6 md:text-base">
                 {program.description}
               </p>
             </article>

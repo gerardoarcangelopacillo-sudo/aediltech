@@ -21,52 +21,95 @@ export function Hero({
   return (
     <section
       className={`relative overflow-hidden border-b border-border ${
-        compact ? "py-24 md:py-32" : "min-h-[85vh] py-28 md:min-h-[90vh] md:py-36"
+        compact ? "py-28 md:py-36" : "min-h-svh"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-16 px-6 md:px-10 lg:min-h-[inherit] lg:px-16">
-        <div className="flex items-start justify-between gap-8">
-          {eyebrow && (
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-muted">
-              {eyebrow}
-            </p>
+      {!compact && (
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="hero-grid absolute inset-0 opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+        </div>
+      )}
+
+      <div
+        className={`relative mx-auto flex w-full max-w-7xl flex-col px-6 md:px-10 lg:px-16 ${
+          compact
+            ? "gap-12"
+            : "min-h-svh justify-between gap-20 py-28 md:gap-24 md:py-32 lg:py-36"
+        }`}
+      >
+        <div
+          className={`flex items-start justify-between gap-10 ${
+            compact ? "" : "hero-enter hero-enter-1"
+          }`}
+        >
+          {eyebrow ? (
+            <p className="section-label max-w-xs leading-relaxed">{eyebrow}</p>
+          ) : (
+            <span />
           )}
           <CrossGraphic
-            size={compact ? 120 : 180}
-            className="shrink-0 text-foreground/20 md:text-foreground/30"
+            width={compact ? 88 : 120}
+            className="shrink-0"
+            priority={!compact}
           />
         </div>
 
-        <div className="max-w-5xl">
-          <h1 className="text-4xl font-medium leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl">
+        <div className={`max-w-5xl ${compact ? "" : "hero-enter hero-enter-2"}`}>
+          <h1
+            className={`font-medium tracking-[-0.03em] text-foreground ${
+              compact
+                ? "text-4xl leading-[1.08] md:text-5xl lg:text-6xl"
+                : "text-[2.75rem] leading-[1.02] md:text-7xl lg:text-[5.25rem] lg:leading-[1.02]"
+            }`}
+          >
             {title}
           </h1>
           {description && (
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
+            <p
+              className={`mt-8 max-w-2xl leading-relaxed text-muted ${
+                compact
+                  ? "text-lg md:text-xl"
+                  : "text-lg md:mt-10 md:text-xl lg:text-2xl lg:leading-relaxed"
+              }`}
+            >
               {description}
             </p>
           )}
         </div>
 
         {(primaryCta || secondaryCta) && (
-          <div className="flex flex-wrap items-center gap-6">
+          <div
+            className={`flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10 ${
+              compact ? "" : "hero-enter hero-enter-3"
+            }`}
+          >
             {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className="group inline-flex items-center gap-3 border border-foreground px-6 py-3 text-sm font-medium tracking-wide transition-colors hover:bg-foreground hover:text-background"
-              >
+              <Link href={primaryCta.href} className="btn-primary group w-fit">
                 {primaryCta.label}
-                <span className="h-px w-6 bg-accent transition-all group-hover:w-10" />
+                <span className="btn-accent-line" aria-hidden />
               </Link>
             )}
             {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="text-sm text-muted transition-colors hover:text-foreground"
-              >
-                {secondaryCta.label}
-              </Link>
+              <>
+                {primaryCta && (
+                  <span className="hidden h-8 w-px bg-border sm:block" aria-hidden />
+                )}
+                <Link
+                  href={secondaryCta.href}
+                  className="link-arrow w-fit text-[13px] uppercase tracking-[0.12em]"
+                >
+                  {secondaryCta.label}
+                </Link>
+              </>
             )}
+          </div>
+        )}
+
+        {!compact && (
+          <div className="hero-enter hero-enter-4 hidden items-end justify-between border-t border-border pt-8 lg:flex">
+            <p className="section-label">Scroll to explore</p>
+            <CrossGraphic width={48} />
           </div>
         )}
       </div>
