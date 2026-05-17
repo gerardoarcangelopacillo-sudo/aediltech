@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 655.3 656.74">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #1d1d1b;
+      }
+
+      .cls-3 {
+        stroke-width: .5px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-4 {
+        stroke-width: .25px;
+      }
+    </style>
+  </defs>
+  <g id="Livello_1-2" data-name="Livello 1">
+    <g>
+      <g id="POLYLINE">
+        <polyline class="cls-4" points="295.76 333.09 .12 333.09 .12 322.46 295.76 322.46"/>
+      </g>
+      <g id="POLYLINE-2" data-name="POLYLINE">
+        <polyline class="cls-3" points="322.34 295.88 322.34 .25 332.97 .25 332.97 295.88"/>
+      </g>
+      <g id="POLYLINE-3" data-name="POLYLINE">
+        <polyline class="cls-4" points="359.54 322.46 655.18 322.46 655.18 333.09 359.54 333.09"/>
+      </g>
+      <g id="POLYLINE-4" data-name="POLYLINE">
+        <polyline class="cls-4" points="332.97 359.67 332.97 656.61 322.34 656.61 322.34 359.67"/>
+      </g>
+      <g id="POLYLINE-5" data-name="POLYLINE">
+        <line class="cls-4" x1="295.76" y1="322.46" x2="295.76" y2="333.09"/>
+      </g>
+      <g id="POLYLINE-6" data-name="POLYLINE">
+        <line class="cls-4" x1="322.34" y1="295.88" x2="332.97" y2="295.88"/>
+      </g>
+      <g id="POLYLINE-7" data-name="POLYLINE">
+        <line class="cls-4" x1="359.54" y1="322.46" x2="359.54" y2="333.09"/>
+      </g>
+      <g id="POLYLINE-8" data-name="POLYLINE">
+        <line class="cls-4" x1="332.97" y1="359.67" x2="322.34" y2="359.67"/>
+      </g>
+      <g id="HATCH">
+        <rect class="cls-1" x=".12" y="322.46" width="295.63" height="10.63"/>
+      </g>
+      <g id="HATCH-2" data-name="HATCH">
+        <rect class="cls-1" x="359.54" y="322.46" width="295.63" height="10.63"/>
+      </g>
+      <g id="HATCH-3" data-name="HATCH">
+        <rect class="cls-1" x="322.34" y=".25" width="10.63" height="295.63"/>
+      </g>
+      <g id="HATCH-4" data-name="HATCH">
+        <rect class="cls-1" x="322.34" y="359.67" width="10.63" height="296.94"/>
+      </g>
+      <circle class="cls-2" cx="327.65" cy="327.78" r="4.43"/>
+    </g>
+  </g>
+</svg>
