@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl backdrop-saturate-150">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 md:px-10 lg:h-[3.75rem] lg:px-16">
+      <div className="header-shell flex h-14 w-full items-center justify-between md:h-16">
         <Link
           href="/"
           className="relative block h-6 w-32 transition-opacity duration-300 hover:opacity-70 md:h-7 md:w-36"

@@ -11,9 +11,9 @@ const technologyLinks = technologies.map((t) => ({
 export function Footer() {
   return (
     <footer className="w-full border-t border-border bg-background">
-      <div className="w-full px-6 py-16 sm:px-10 md:py-20 lg:px-16 xl:px-24 2xl:px-32">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-10 xl:gap-16">
-          <div className="lg:col-span-5 xl:col-span-4">
+      <div className="footer-shell w-full py-16 md:py-20 lg:py-24">
+        <div className="flex w-full flex-col gap-14 xl:flex-row xl:items-start xl:justify-between xl:gap-20">
+          <div className="w-full max-w-lg shrink-0 xl:max-w-md">
             <FooterSymbol />
             <Link href="/" className="relative mb-6 block h-7 w-40 md:h-8 md:w-44">
               <Image
@@ -36,7 +36,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3 lg:col-span-7 lg:gap-8 xl:col-span-8">
+          <div className="grid w-full flex-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10 xl:gap-16">
             <div>
               <p className="section-label mb-5">Navigation</p>
               <ul className="space-y-3">
@@ -87,8 +87,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 border-t border-border pt-10">
-          <div className="grid gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+        <div className="mt-16 w-full border-t border-border pt-10">
+          <div className="grid w-full gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
             <div className="text-xs leading-relaxed text-muted">
               <p className="mb-2 font-medium text-foreground">Company</p>
               <p>Aediltech S.r.l.</p>
@@ -105,7 +105,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col gap-4 border-t border-border pt-8 text-xs text-muted md:flex-row md:items-center md:justify-between">
+          <div className="mt-10 flex w-full flex-col gap-4 border-t border-border pt-8 text-xs text-muted md:flex-row md:items-center md:justify-between">
             <p>&copy; {new Date().getFullYear()} Aediltech. All rights reserved.</p>
             <p className="flex items-center gap-3 uppercase tracking-[0.15em]">
               <span className="inline-block h-px w-6 bg-accent" aria-hidden />

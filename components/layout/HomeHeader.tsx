@@ -9,29 +9,35 @@ export function HomeHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-background/60 backdrop-blur-md">
-      <div className="mx-auto grid h-14 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:px-6 md:h-16 md:px-10 lg:px-14">
-        <Link href="#top" className="shrink-0 justify-self-start" aria-label="Aediltech home">
+    <header className="fixed inset-x-0 top-0 z-50 w-full bg-background/70 backdrop-blur-md">
+      <div className="header-shell relative flex h-14 w-full items-center md:h-16">
+        <Link
+          href="#top"
+          className="relative z-10 shrink-0"
+          aria-label="Aediltech home"
+        >
           <RotatingSymbol width={28} priority mode="once" className="md:hidden" />
           <RotatingSymbol width={34} priority mode="once" className="hidden md:flex" />
         </Link>
 
         <nav
-          className="hidden items-center justify-center gap-7 justify-self-center lg:flex"
+          className="pointer-events-none absolute inset-x-0 hidden items-center justify-center gap-7 lg:flex"
           aria-label="Sections"
         >
-          {homeSectionLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="relative py-1 text-[11px] tracking-[0.08em] text-muted uppercase transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:text-foreground hover:after:w-full"
-            >
-              {link.label}
-            </Link>
-          ))}
+          <div className="pointer-events-auto flex items-center gap-7">
+            {homeSectionLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative py-1 text-[11px] tracking-[0.08em] text-muted uppercase transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:text-foreground hover:after:w-full"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </nav>
 
-        <div className="flex items-center justify-end gap-2 justify-self-end">
+        <div className="relative z-10 ml-auto flex items-center gap-2">
           <button
             type="button"
             className="flex flex-col gap-1.5 p-2 lg:hidden"
@@ -58,13 +64,13 @@ export function HomeHeader() {
       </div>
 
       <nav
-        className={`overflow-hidden border-t border-border/80 bg-background/95 backdrop-blur-lg transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden ${
+        className={`w-full overflow-hidden border-t border-border/80 bg-background/95 backdrop-blur-lg transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden ${
           open ? "max-h-[28rem] opacity-100" : "max-h-0 border-t-transparent opacity-0"
         }`}
         aria-label="Mobile navigation"
         aria-hidden={!open}
       >
-        <ul className="px-4 py-5 sm:px-6">
+        <ul className="header-shell py-5">
           {homeSectionLinks.map((link) => (
             <li key={link.href}>
               <Link

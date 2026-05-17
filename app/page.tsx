@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HomeLanding } from "@/components/home/HomeLanding";
 import { ApplicationsGrid } from "@/components/ui/ApplicationsGrid";
 import { FullscreenSection } from "@/components/ui/FullscreenSection";
-import { SectionImage } from "@/components/ui/SectionImage";
+import { MediaPanel } from "@/components/ui/MediaPanel";
 import { SolutionsList } from "@/components/ui/SolutionsList";
 import { TechnologiesGrid } from "@/components/ui/TechnologiesGrid";
 import { images } from "@/lib/images";
@@ -23,38 +23,36 @@ export default function Home() {
       <HomeLanding />
 
       <FullscreenSection id="intro" border={false}>
-        <p className="max-w-4xl text-[1.75rem] font-medium leading-[1.15] tracking-[-0.03em] text-foreground md:text-4xl md:leading-[1.12] lg:text-5xl lg:leading-[1.08]">
+        <p className="max-w-5xl text-[1.75rem] font-medium leading-[1.12] tracking-[-0.03em] text-foreground md:text-[2.75rem] md:leading-[1.1] lg:text-6xl lg:leading-[1.06]">
           We engineer deposition platforms, robotic cells and material formulations
           that connect digital design to physical production at architectural scale.
         </p>
       </FullscreenSection>
 
       <FullscreenSection id="technologies" className="bg-surface">
-        <div className="mb-14 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between lg:mb-20">
+        <div className="mb-16 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="section-label mb-4">Technologies</p>
-            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl">
+            <h2 className="max-w-2xl text-3xl font-medium tracking-[-0.03em] md:text-5xl lg:text-6xl">
               Core capabilities
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-muted md:text-base">
+          <p className="max-w-md text-sm leading-relaxed text-muted md:text-base">
             Integrated hardware, software and materials for demanding built-environment
             applications.
           </p>
         </div>
 
-        <div className="mb-14 grid gap-4 md:grid-cols-2 md:gap-5">
-          <SectionImage
+        <div className="mb-16 grid gap-5 md:grid-cols-2 lg:gap-6">
+          <MediaPanel
             src={images.roboticPrinting}
             alt="Robotic additive manufacturing system placeholder"
             caption="Robotic deposition platform — reference"
-            className="md:col-span-1"
           />
-          <SectionImage
+          <MediaPanel
             src={images.polymerLfam}
             alt="Polymer large-format additive manufacturing placeholder"
             caption="Polymer LFAM process — reference"
-            className="md:col-span-1"
           />
         </div>
 
@@ -62,9 +60,9 @@ export default function Home() {
       </FullscreenSection>
 
       <FullscreenSection id="solutions">
-        <div className="mb-14 md:mb-16 lg:mb-20">
+        <div className="mb-16 md:mb-20">
           <p className="section-label mb-4">Solutions</p>
-          <h2 className="max-w-3xl text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl lg:leading-[1.1]">
+          <h2 className="max-w-4xl text-3xl font-medium tracking-[-0.03em] md:text-5xl lg:text-6xl lg:leading-[1.08]">
             From design studios to construction sites and industrial floors
           </h2>
         </div>
@@ -72,9 +70,9 @@ export default function Home() {
       </FullscreenSection>
 
       <FullscreenSection id="applications" className="bg-surface">
-        <div className="mb-14 md:mb-16 lg:mb-20">
+        <div className="mb-16 md:mb-20">
           <p className="section-label mb-4">Applications</p>
-          <h2 className="max-w-xl text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl">
+          <h2 className="max-w-3xl text-3xl font-medium tracking-[-0.03em] md:text-5xl lg:text-6xl">
             Where our systems operate
           </h2>
         </div>
@@ -82,13 +80,13 @@ export default function Home() {
       </FullscreenSection>
 
       <FullscreenSection id="research">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20 xl:gap-28">
           <div>
             <p className="section-label mb-4">Research & development</p>
-            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl lg:leading-[1.1]">
+            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-5xl lg:text-6xl lg:leading-[1.08]">
               Advancing the science of deposition
             </h2>
-            <div className="mt-10 space-y-6 text-base leading-relaxed text-muted md:text-lg">
+            <div className="mt-12 space-y-6 text-base leading-relaxed text-muted md:text-lg">
               <p>
                 Our R&D programs focus on material behaviour, process stability and scalable
                 automation — bridging laboratory insight with field-ready systems.
@@ -102,22 +100,23 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <SectionImage
+          <MediaPanel
             src={images.researchMaterials}
             alt="Materials research laboratory placeholder"
             caption="Material formulation & testing — reference"
+            aspect="4/3"
           />
         </div>
       </FullscreenSection>
 
       <FullscreenSection id="contact" className="bg-surface">
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between md:gap-16">
+        <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between md:gap-20">
           <div className="max-w-2xl">
             <p className="section-label mb-4">Contact</p>
-            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl lg:leading-[1.08]">
+            <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-5xl lg:text-6xl lg:leading-[1.08]">
               Build with precision at scale.
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
+            <p className="mt-8 text-base leading-relaxed text-muted md:text-lg">
               Discuss your project requirements with our engineering team.
             </p>
           </div>

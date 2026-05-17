@@ -11,19 +11,19 @@ type SolutionsListProps = {
 export function SolutionsList({ items, showLink = true }: SolutionsListProps) {
   return (
     <>
-      <div className="grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
+      <div className="grid border-t border-border md:grid-cols-2">
         {items.map((item) => (
           <article
             key={item.id}
-            className="group bg-background p-10 transition-colors duration-500 hover:bg-surface md:p-12"
+            className="group border-b border-border py-12 pr-0 transition-colors duration-500 hover:bg-surface/80 md:py-14 md:odd:pr-12 md:even:pl-12 md:even:pr-0"
           >
-            <p className="mb-6 text-xs font-medium tracking-[0.2em] text-muted-light transition-colors duration-300 group-hover:text-muted">
+            <p className="mb-6 text-xs font-medium tracking-[0.2em] text-muted-light">
               {item.index}
             </p>
-            <h3 className="text-xl font-medium tracking-[-0.02em] md:text-2xl">
+            <h3 className="text-xl font-medium tracking-[-0.02em] md:text-2xl lg:text-3xl">
               {item.title}
             </h3>
-            <p className="mt-5 max-w-md text-sm leading-[1.7] text-muted md:text-base">
+            <p className="mt-5 max-w-lg text-sm leading-[1.7] text-muted md:text-base">
               {item.description}
             </p>
             <span className="mt-8 inline-block h-px w-0 bg-accent transition-all duration-500 group-hover:w-10" />

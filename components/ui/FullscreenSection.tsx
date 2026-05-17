@@ -17,11 +17,11 @@ export function FullscreenSection({
   return (
     <section
       id={id}
-      className={`relative flex min-h-svh flex-col justify-center ${
+      className={`relative flex min-h-svh min-h-[100dvh] flex-col justify-center overflow-hidden ${
         border ? "border-t border-border" : ""
       } ${className}`}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 py-24 md:px-10 md:py-28 lg:px-16 lg:py-32">
+      <div className="section-shell w-full py-28 md:py-32 lg:py-40">
         <Reveal>{children}</Reveal>
       </div>
     </section>
