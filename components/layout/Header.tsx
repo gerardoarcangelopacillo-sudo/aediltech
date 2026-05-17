@@ -11,7 +11,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl backdrop-saturate-150">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/70 backdrop-blur-xl backdrop-saturate-150">
       <div className="header-shell flex h-14 w-full items-center justify-between md:h-16">
         <Link
           href="/"
@@ -22,7 +22,7 @@ export function Header() {
             src="/logo/aediltech-wordmark.svg"
             alt="Aediltech"
             fill
-            className="object-contain object-left"
+            className="brand-logo-inverse object-contain object-left"
             priority
           />
         </Link>
@@ -37,7 +37,7 @@ export function Header() {
                 className={`relative py-1 text-[13px] tracking-[0.04em] transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:h-px after:bg-accent after:transition-all after:duration-300 after:ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   active
                     ? "text-foreground after:w-full"
-                    : "text-muted hover:text-foreground after:w-0 hover:after:w-full"
+                    : "text-muted hover:text-accent after:w-0 hover:after:w-full"
                 }`}
               >
                 {link.label}

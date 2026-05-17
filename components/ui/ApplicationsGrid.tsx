@@ -24,7 +24,7 @@ export function ApplicationsGrid({
           return (
             <article
               key={item.id}
-              className="group flex flex-col bg-background transition-colors duration-500 hover:bg-surface"
+              className="group flex flex-col bg-background transition-colors duration-500 hover:bg-surface-elevated/40"
             >
               {image && (
                 <MediaImage

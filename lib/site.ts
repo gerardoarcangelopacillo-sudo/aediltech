@@ -18,48 +18,49 @@ export const navLinks = [
 
 /** In-page anchors for the homepage fullscreen layout */
 export const homeSectionLinks = [
-  { label: "Technologies", href: "#technologies" },
+  { label: "Systems", href: "#technologies" },
   { label: "Solutions", href: "#solutions" },
   { label: "Applications", href: "#applications" },
   { label: "Research", href: "#research" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
+/** Aediltech technology systems — homepage & technologies page */
 export const technologies = [
   {
-    id: "large-format-am",
+    id: "terracem",
     index: "01",
-    title: "Large-format additive manufacturing",
+    title: "TerraCem",
     description:
-      "Scalable deposition platforms engineered for architectural scale, structural performance and continuous production.",
+      "Cementitious deposition formulations for structural elements, façades and on-site production — engineered for rheology, buildability and field performance.",
+  },
+  {
+    id: "polyx",
+    index: "02",
+    title: "PolyX",
+    description:
+      "Large-format polymer deposition for architectural components, interior systems and rapid tooling with tuned mechanical and surface properties.",
+  },
+  {
+    id: "metalform",
+    index: "03",
+    title: "MetalForm",
+    description:
+      "Metal additive and hybrid deposition pathways for industrial fixtures, structural connectors and high-load built-environment applications.",
   },
   {
     id: "robotic-systems",
-    index: "02",
-    title: "Robotic deposition systems",
-    description:
-      "Multi-axis robotic cells with precision motion control for complex geometries and repeatable field deployment.",
-  },
-  {
-    id: "material-solutions",
-    index: "03",
-    title: "Advanced material solutions",
-    description:
-      "Custom formulations developed for structural, thermal and environmental requirements across built applications.",
-  },
-  {
-    id: "digital-fabrication",
     index: "04",
-    title: "Digital fabrication workflows",
+    title: "Robotic Systems",
     description:
-      "End-to-end toolchains from computational design to machine-ready deposition paths and quality validation.",
+      "Multi-axis robotic cells, motion planning and field-deployable deposition platforms for complex geometries at architectural scale.",
   },
   {
-    id: "process-control",
+    id: "material-systems",
     index: "05",
-    title: "Process control & automation",
+    title: "Material Systems",
     description:
-      "Closed-loop monitoring, sensor integration and adaptive parameters for stable, certifiable production.",
+      "Integrated material science, process qualification and closed-loop control — from laboratory formulation to certified production.",
   },
 ] as const;
 

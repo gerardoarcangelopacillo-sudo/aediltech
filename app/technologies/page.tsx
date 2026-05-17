@@ -14,9 +14,9 @@ export default function TechnologiesPage() {
     <>
       <Hero
         compact
-        eyebrow="Technologies"
-        title="Integrated systems for deposition at scale."
-        description="Hardware, software and materials developed as a single platform — from path planning to finished build."
+        eyebrow="Technology Systems"
+        title="TerraCem, PolyX, MetalForm and beyond."
+        description="Integrated deposition hardware, robotic cells and material systems — from path planning to certified production."
       />
 
       <SectionContainer>

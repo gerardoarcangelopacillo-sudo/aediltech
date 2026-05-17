@@ -20,14 +20,15 @@ export function Hero({
 }: HeroProps) {
   return (
     <section
-      className={`relative overflow-hidden border-b border-border ${
+      className={`relative overflow-hidden border-b border-border bg-background ${
         compact ? "py-28 md:py-36" : "min-h-svh"
       }`}
     >
       {!compact && (
         <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="hero-grid absolute inset-0 opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+          <div className="hero-grid absolute inset-0 opacity-50" />
+          <div className="hero-ambient-glow absolute inset-0 opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
         </div>
       )}
 
@@ -50,7 +51,7 @@ export function Hero({
           )}
           <CrossGraphic
             width={compact ? 88 : 120}
-            className="shrink-0"
+            className="brand-logo-inverse shrink-0"
             priority={!compact}
           />
         </div>
@@ -109,7 +110,7 @@ export function Hero({
         {!compact && (
           <div className="hero-enter hero-enter-4 hidden items-end justify-between border-t border-border pt-8 lg:flex">
             <p className="section-label">Scroll to explore</p>
-            <CrossGraphic width={48} />
+            <CrossGraphic width={48} className="brand-logo-inverse" />
           </div>
         )}
       </div>

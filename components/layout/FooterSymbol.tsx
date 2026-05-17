@@ -30,7 +30,11 @@ export function FooterSymbol() {
 
   return (
     <div ref={ref} className="mb-8">
-      <RotatingSymbol width={40} mode={animate ? "once" : "none"} />
+      <RotatingSymbol
+        width={40}
+        mode={animate ? "once" : "none"}
+        className="brand-logo-inverse"
+      />
     </div>
   );
 }

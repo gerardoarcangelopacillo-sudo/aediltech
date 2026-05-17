@@ -17,7 +17,7 @@ export function Footer() {
                 src="/logo/aediltech-wordmark.svg"
                 alt="Aediltech"
                 fill
-                className="object-contain object-left"
+                className="brand-logo-inverse object-contain object-left"
               />
             </Link>
             <div className="relative mt-6 h-5 w-full max-w-xl md:h-6">
@@ -25,7 +25,7 @@ export function Footer() {
                 src="/logo/aediltech-tagline.svg"
                 alt={siteConfig.brandTagline}
                 fill
-                className="object-contain object-left"
+                className="brand-logo-inverse object-contain object-left"
               />
             </div>
           </div>
@@ -35,7 +35,9 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="mt-20 w-full border-t border-border pt-10">
+        <div className="footer-divider-accent mt-20" aria-hidden />
+
+        <div className="mt-10 w-full pt-10">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
             <div className="text-xs leading-relaxed text-muted">
               <p className="font-medium text-foreground">Aediltech S.r.l.</p>
@@ -44,7 +46,7 @@ export function Footer() {
               <p className="mt-4">
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="text-foreground/80 transition-colors hover:text-foreground"
+                  className="text-foreground/80 transition-colors hover:text-accent"
                 >
                   {siteConfig.email}
                 </a>

@@ -15,7 +15,7 @@ export function CTASection({
   ctaHref = "/contact",
 }: CTASectionProps) {
   return (
-    <section className="border-t border-border bg-surface">
+    <section className="border-t border-border bg-surface/80">
       <div className="mx-auto max-w-7xl px-6 py-28 md:px-10 md:py-36 lg:px-16">
         <Reveal>
           <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between md:gap-16">

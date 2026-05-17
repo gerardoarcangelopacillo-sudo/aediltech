@@ -14,7 +14,7 @@ export function TechnologiesGrid({ items, showLink = true }: TechnologiesGridPro
       {items.map((item) => (
         <article
           key={item.id}
-          className="group relative grid gap-8 border-t border-border py-14 transition-colors duration-500 first:border-t-0 hover:bg-surface md:grid-cols-12 md:items-start md:gap-10 md:py-16 md:pl-2 md:pr-8"
+          className="group relative grid gap-8 border-t border-border py-14 transition-colors duration-500 first:border-t-0 hover:bg-surface-elevated/60 md:grid-cols-12 md:items-start md:gap-10 md:py-16 md:pl-2 md:pr-8"
         >
           <span
             className="absolute left-0 top-0 h-0 w-px bg-accent transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:h-full"
@@ -22,7 +22,7 @@ export function TechnologiesGrid({ items, showLink = true }: TechnologiesGridPro
           />
 
           <div className="md:col-span-2">
-            <span className="block text-5xl font-medium leading-none tracking-tighter text-border-subtle transition-colors duration-500 group-hover:text-foreground md:text-6xl">
+            <span className="block text-5xl font-medium leading-none tracking-tighter text-white/10 transition-colors duration-500 group-hover:text-accent/80 md:text-6xl">
               {item.index}
             </span>
           </div>
@@ -43,7 +43,7 @@ export function TechnologiesGrid({ items, showLink = true }: TechnologiesGridPro
       {showLink && (
         <div className="flex justify-end px-2 py-10 md:px-8">
           <Link href="/technologies" className="link-arrow">
-            View all technologies
+            View all technology systems
           </Link>
         </div>
       )}

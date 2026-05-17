@@ -9,7 +9,7 @@ export function HomeLanding() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-background"
       aria-label="Aediltech"
     >
       <HeroBackground />
@@ -23,7 +23,7 @@ export function HomeLanding() {
             src="/logo/aediltech-wordmark.svg"
             alt="Aediltech"
             fill
-            className="object-contain"
+            className="brand-logo-inverse object-contain"
             priority
             sizes="(max-width: 768px) 88vw, 576px"
           />
@@ -37,7 +37,7 @@ export function HomeLanding() {
             src="/logo/aediltech-tagline.svg"
             alt="Advance Additive Manufacturing Technologies"
             fill
-            className="object-contain"
+            className="brand-logo-inverse object-contain"
             priority
             sizes="(max-width: 768px) 92vw, 544px"
           />

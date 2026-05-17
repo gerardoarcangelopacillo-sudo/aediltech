@@ -9,15 +9,25 @@ export function HomeHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full bg-background/70 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-border/40 bg-background/55 backdrop-blur-xl backdrop-saturate-150">
       <div className="header-shell relative flex h-14 w-full items-center md:h-16">
         <Link
           href="#top"
           className="relative z-10 shrink-0"
           aria-label="Aediltech home"
         >
-          <RotatingSymbol width={28} priority mode="once" className="md:hidden" />
-          <RotatingSymbol width={34} priority mode="once" className="hidden md:flex" />
+          <RotatingSymbol
+            width={28}
+            priority
+            mode="once"
+            className="brand-logo-inverse md:hidden"
+          />
+          <RotatingSymbol
+            width={34}
+            priority
+            mode="once"
+            className="brand-logo-inverse hidden md:flex"
+          />
         </Link>
 
         <nav
@@ -57,14 +67,22 @@ export function HomeHeader() {
           </button>
 
           <Link href="#top" className="shrink-0" aria-label="Aediltech home">
-            <RotatingSymbol width={28} mode="once" className="md:hidden" />
-            <RotatingSymbol width={34} mode="once" className="hidden md:flex" />
+            <RotatingSymbol
+              width={28}
+              mode="once"
+              className="brand-logo-inverse md:hidden"
+            />
+            <RotatingSymbol
+              width={34}
+              mode="once"
+              className="brand-logo-inverse hidden md:flex"
+            />
           </Link>
         </div>
       </div>
 
       <nav
-        className={`w-full overflow-hidden border-t border-border/80 bg-background/95 backdrop-blur-lg transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden ${
+        className={`w-full overflow-hidden border-t border-border/60 bg-background/95 backdrop-blur-xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden ${
           open ? "max-h-[28rem] opacity-100" : "max-h-0 border-t-transparent opacity-0"
         }`}
         aria-label="Mobile navigation"
@@ -75,7 +93,7 @@ export function HomeHeader() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block border-b border-border/60 py-4 text-sm font-medium tracking-wide"
+                className="block border-b border-border/60 py-4 text-sm font-medium tracking-wide transition-colors hover:text-accent"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

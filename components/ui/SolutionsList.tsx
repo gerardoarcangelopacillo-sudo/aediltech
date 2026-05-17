@@ -15,7 +15,7 @@ export function SolutionsList({ items, showLink = true }: SolutionsListProps) {
         {items.map((item) => (
           <article
             key={item.id}
-            className="group border-b border-border py-12 pr-0 transition-colors duration-500 hover:bg-surface/80 md:py-14 md:odd:pr-12 md:even:pl-12 md:even:pr-0"
+            className="group border-b border-border py-12 pr-0 transition-colors duration-500 hover:bg-surface-elevated/50 md:py-14 md:odd:pr-12 md:even:pl-12 md:even:pr-0"
           >
             <p className="mb-6 text-xs font-medium tracking-[0.2em] text-muted-light">
               {item.index}
