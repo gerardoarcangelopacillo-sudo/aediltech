@@ -5,17 +5,8 @@ import { FullscreenSection } from "@/components/ui/FullscreenSection";
 import { MediaPanel } from "@/components/ui/MediaPanel";
 import { SolutionsList } from "@/components/ui/SolutionsList";
 import { TechnologiesGrid } from "@/components/ui/TechnologiesGrid";
-import { images } from "@/lib/images";
+import { applicationImages, images } from "@/lib/images";
 import { applications, solutions, technologies } from "@/lib/site";
-
-const applicationImages = {
-  facades: images.concretePrinting,
-  structures: images.roboticPrinting,
-  interiors: images.polymerLfam,
-  infrastructure: images.concretePrinting,
-  tooling: images.roboticPrinting,
-  "material-rd": images.researchMaterials,
-} as const;
 
 export default function Home() {
   return (
@@ -45,14 +36,14 @@ export default function Home() {
 
         <div className="mb-16 grid gap-5 md:grid-cols-2 lg:gap-6">
           <MediaPanel
-            src={images.roboticPrinting}
-            alt="Robotic additive manufacturing system"
-            caption="Robotic deposition platform — reference"
+            {...images.roboticPrinting}
+            caption="Robotic deposition platform"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <MediaPanel
-            src={images.polymerLfam}
-            alt="Polymer large-format additive manufacturing"
-            caption="Polymer LFAM process — reference"
+            {...images.polymerLfam}
+            caption="Large-format additive process"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
@@ -101,10 +92,10 @@ export default function Home() {
             </div>
           </div>
           <MediaPanel
-            src={images.researchMaterials}
-            alt="Materials research laboratory"
-            caption="Material formulation & testing — reference"
+            {...images.researchMaterials}
+            caption="Material formulation and testing"
             aspect="4/3"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </div>
       </FullscreenSection>

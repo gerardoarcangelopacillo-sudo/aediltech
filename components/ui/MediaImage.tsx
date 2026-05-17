@@ -1,15 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
+import type { SiteImage } from "@/lib/images";
 
 export type MediaAspect = "16/10" | "21/9" | "4/3";
 
-type MediaImageProps = {
-  src: string;
-  alt: string;
+type MediaImageProps = SiteImage & {
   aspect?: MediaAspect;
   className?: string;
   priority?: boolean;
+  sizes?: string;
 };
 
 const aspectMap: Record<MediaAspect, string> = {
@@ -24,6 +25,7 @@ export function MediaImage({
   aspect = "16/10",
   className = "",
   priority = false,
+  sizes = "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw",
 }: MediaImageProps) {
   const [failed, setFailed] = useState(false);
 
@@ -33,15 +35,15 @@ export function MediaImage({
       data-failed={failed || undefined}
     >
       {failed ? (
-        <div className="media-panel-fallback-graphic" aria-hidden />
+        <div className="media-panel-fallback-graphic" role="img" aria-label={alt} />
       ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
+        <Image
           src={src}
           alt={alt}
+          fill
+          priority={priority}
+          sizes={sizes}
           className="media-panel-img"
-          loading={priority ? "eager" : "lazy"}
-          decoding="async"
           onError={() => setFailed(true)}
         />
       )}

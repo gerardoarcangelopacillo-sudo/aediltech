@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MediaImage } from "@/components/ui/MediaImage";
+import type { SiteImage } from "@/lib/images";
 import type { applications } from "@/lib/site";
 
 type Application = (typeof applications)[number];
@@ -7,7 +8,7 @@ type Application = (typeof applications)[number];
 type ApplicationsGridProps = {
   items: readonly Application[];
   showLink?: boolean;
-  imageById?: Partial<Record<Application["id"], string>>;
+  imageById?: Partial<Record<Application["id"], SiteImage>>;
 };
 
 export function ApplicationsGrid({
@@ -19,17 +20,17 @@ export function ApplicationsGrid({
     <>
       <div className="grid gap-px bg-border md:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => {
-          const imageSrc = imageById[item.id];
+          const image = imageById[item.id];
           return (
             <article
               key={item.id}
               className="group flex flex-col bg-background transition-colors duration-500 hover:bg-surface"
             >
-              {imageSrc && (
+              {image && (
                 <MediaImage
-                  src={imageSrc}
-                  alt={item.title}
+                  {...image}
                   aspect="16/10"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="rounded-none border-0 border-b border-border"
                 />
               )}
