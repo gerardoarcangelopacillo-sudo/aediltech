@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Concrete printing placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ececec"/>
+      <stop offset="100%" stop-color="#f8f8f8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <path d="M0 700 Q400 600 800 680 T1600 650 L1600 1000 L0 1000 Z" fill="#d4d4d4" opacity="0.5"/>
+  <rect x="240" y="320" width="480" height="360" fill="#0a0a0a" opacity="0.05"/>
+  <rect x="880" y="400" width="320" height="12" fill="#c8f542" opacity="0.45"/>
+  <line x1="120" y1="200" x2="1480" y2="200" stroke="#e5e5e5" stroke-width="2"/>
+  <text x="80" y="920" fill="#737373" font-family="system-ui,sans-serif" font-size="28" letter-spacing="0.2em">CONCRETE PRINTING  PLACEHOLDER</text>
+</svg>

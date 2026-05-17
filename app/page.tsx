@@ -2,9 +2,20 @@ import Link from "next/link";
 import { HomeLanding } from "@/components/home/HomeLanding";
 import { ApplicationsGrid } from "@/components/ui/ApplicationsGrid";
 import { FullscreenSection } from "@/components/ui/FullscreenSection";
+import { SectionImage } from "@/components/ui/SectionImage";
 import { SolutionsList } from "@/components/ui/SolutionsList";
 import { TechnologiesGrid } from "@/components/ui/TechnologiesGrid";
+import { images } from "@/lib/images";
 import { applications, solutions, technologies } from "@/lib/site";
+
+const applicationImages = {
+  facades: images.concretePrinting,
+  structures: images.roboticPrinting,
+  interiors: images.polymerLfam,
+  infrastructure: images.concretePrinting,
+  tooling: images.roboticPrinting,
+  "material-rd": images.researchMaterials,
+} as const;
 
 export default function Home() {
   return (
@@ -31,6 +42,22 @@ export default function Home() {
             applications.
           </p>
         </div>
+
+        <div className="mb-14 grid gap-4 md:grid-cols-2 md:gap-5">
+          <SectionImage
+            src={images.roboticPrinting}
+            alt="Robotic additive manufacturing system placeholder"
+            caption="Robotic deposition platform — reference"
+            className="md:col-span-1"
+          />
+          <SectionImage
+            src={images.polymerLfam}
+            alt="Polymer large-format additive manufacturing placeholder"
+            caption="Polymer LFAM process — reference"
+            className="md:col-span-1"
+          />
+        </div>
+
         <TechnologiesGrid items={technologies.slice(0, 4)} />
       </FullscreenSection>
 
@@ -51,30 +78,35 @@ export default function Home() {
             Where our systems operate
           </h2>
         </div>
-        <ApplicationsGrid items={applications} />
+        <ApplicationsGrid items={applications} imageById={applicationImages} />
       </FullscreenSection>
 
       <FullscreenSection id="research">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24">
           <div>
             <p className="section-label mb-4">Research & development</p>
             <h2 className="text-3xl font-medium tracking-[-0.03em] md:text-4xl lg:text-5xl lg:leading-[1.1]">
               Advancing the science of deposition
             </h2>
+            <div className="mt-10 space-y-6 text-base leading-relaxed text-muted md:text-lg">
+              <p>
+                Our R&D programs focus on material behaviour, process stability and scalable
+                automation — bridging laboratory insight with field-ready systems.
+              </p>
+              <p>
+                We collaborate with universities, manufacturers and project teams to validate
+                new formulations and qualify production workflows.
+              </p>
+              <Link href="/research" className="link-arrow w-fit font-medium text-foreground">
+                Research programs
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-col justify-center space-y-6 text-base leading-relaxed text-muted md:text-lg">
-            <p>
-              Our R&D programs focus on material behaviour, process stability and scalable
-              automation — bridging laboratory insight with field-ready systems.
-            </p>
-            <p>
-              We collaborate with universities, manufacturers and project teams to validate
-              new formulations and qualify production workflows.
-            </p>
-            <Link href="/research" className="link-arrow w-fit font-medium text-foreground">
-              Research programs
-            </Link>
-          </div>
+          <SectionImage
+            src={images.researchMaterials}
+            alt="Materials research laboratory placeholder"
+            caption="Material formulation & testing — reference"
+          />
         </div>
       </FullscreenSection>
 

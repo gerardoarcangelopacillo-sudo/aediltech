@@ -1,33 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroBackground } from "@/components/home/HeroBackground";
+
+const WORDMARK_ASPECT = "1091.58 / 202.47";
+const TAGLINE_ASPECT = "1072.65 / 48.48";
 
 export function HomeLanding() {
   return (
     <section
       id="top"
-      className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden"
       aria-label="Aediltech"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="hero-grid absolute inset-0 opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
-      </div>
+      <HeroBackground />
 
-      <div className="landing-enter relative z-10 flex w-full flex-col items-center px-6 pt-20 pb-28 text-center md:px-10 md:pt-24">
-        <div className="relative w-[min(90vw,42rem)]" style={{ aspectRatio: `${1067.66} / ${229.21}` }}>
+      <div className="landing-enter relative z-10 flex w-full max-w-[100vw] flex-col items-center px-6 pt-20 pb-28 text-center md:px-10 md:pt-24">
+        <div
+          className="relative w-[min(88vw,36rem)]"
+          style={{ aspectRatio: WORDMARK_ASPECT }}
+        >
           <Image
-            src="/logo/aediltech-logo-full.svg"
+            src="/logo/aediltech-wordmark.svg"
             alt="Aediltech"
             fill
             className="object-contain"
             priority
-            sizes="(max-width: 768px) 90vw, 672px"
+            sizes="(max-width: 768px) 88vw, 576px"
           />
         </div>
 
         <div
-          className="relative mt-8 w-[min(92vw,36rem)] md:mt-10"
-          style={{ aspectRatio: `${1072.65} / ${48.48}` }}
+          className="relative mt-10 w-[min(92vw,34rem)] md:mt-12"
+          style={{ aspectRatio: TAGLINE_ASPECT }}
         >
           <Image
             src="/logo/aediltech-tagline.svg"
@@ -35,7 +39,7 @@ export function HomeLanding() {
             fill
             className="object-contain"
             priority
-            sizes="(max-width: 768px) 92vw, 576px"
+            sizes="(max-width: 768px) 92vw, 544px"
           />
         </div>
       </div>

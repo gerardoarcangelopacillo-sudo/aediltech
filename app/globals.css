@@ -100,6 +100,106 @@ body {
   animation: symbol-rotate 36s linear infinite;
 }
 
+.symbol-spin-once {
+  animation: symbol-rotate-once 2.75s cubic-bezier(0.45, 0.05, 0.25, 1) forwards;
+}
+
+@keyframes symbol-rotate-once {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ambient-drift {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+  }
+  100% {
+    transform: translate(3%, -2%) scale(1.04);
+  }
+}
+
+@keyframes ambient-mesh {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(8deg) scale(1.08);
+    opacity: 0.35;
+  }
+}
+
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(12px, -18px);
+    opacity: 0.55;
+  }
+}
+
+.hero-ambient-base {
+  background: #ffffff;
+}
+
+.hero-ambient-gradient {
+  background:
+    radial-gradient(ellipse 70% 55% at 25% 35%, rgba(200, 245, 66, 0.09), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 75% 65%, rgba(0, 0, 0, 0.04), transparent 50%),
+    radial-gradient(ellipse 90% 80% at 50% 50%, #fafafa, #ffffff 70%);
+  animation: ambient-drift 22s ease-in-out infinite alternate;
+}
+
+.hero-ambient-grid {
+  background-image:
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 64px 64px;
+  animation: grid-drift 56s linear infinite;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 45%, black 15%, transparent 70%);
+  opacity: 0.55;
+}
+
+.hero-ambient-mesh {
+  background:
+    conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(200, 245, 66, 0.04) 60deg, transparent 120deg, rgba(0, 0, 0, 0.03) 200deg, transparent 280deg);
+  animation: ambient-mesh 28s ease-in-out infinite alternate;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
+}
+
+.hero-ambient-glow {
+  background: radial-gradient(circle at 50% 48%, rgba(200, 245, 66, 0.06), transparent 42%);
+}
+
+.hero-ambient-particles li {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--muted-light);
+  animation: particle-float calc(8s + var(--i) * 1.2s) ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.7s);
+  left: calc(8% + var(--i) * 7.5%);
+  top: calc(18% + (var(--i) * 5.5%));
+}
+
+.hero-ambient-particles li:nth-child(3n) {
+  background: var(--accent);
+  opacity: 0.35;
+  width: 3px;
+  height: 3px;
+}
+
 .landing-enter {
   animation: landing-fade 1.4s var(--ease-out-expo) forwards;
   opacity: 0;
@@ -206,7 +306,12 @@ body {
 
   .hero-enter,
   .hero-grid,
+  .hero-ambient-gradient,
+  .hero-ambient-grid,
+  .hero-ambient-mesh,
+  .hero-ambient-particles li,
   .symbol-spin,
+  .symbol-spin-once,
   .landing-enter,
   .scroll-hint {
     animation: none;
@@ -214,7 +319,8 @@ body {
     transform: none;
   }
 
-  .hero-grid {
+  .hero-grid,
+  .hero-ambient-grid {
     background-position: 0 0;
   }
 }

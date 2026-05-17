@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Polymer LFAM placeholder">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#c8f542" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="#fafafa"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <path d="M200 750 L400 450 L600 550 L500 750 Z M700 750 L900 380 L1100 480 L1000 750 Z" fill="#0a0a0a" opacity="0.07"/>
+  <ellipse cx="800" cy="420" rx="200" ry="80" fill="none" stroke="#0a0a0a" stroke-width="1" opacity="0.12"/>
+  <text x="80" y="920" fill="#737373" font-family="system-ui,sans-serif" font-size="28" letter-spacing="0.2em">POLYMER LFAM  PLACEHOLDER</text>
+</svg>

@@ -12,8 +12,8 @@ export function HomeHeader() {
     <header className="fixed inset-x-0 top-0 z-50 bg-background/60 backdrop-blur-md">
       <div className="mx-auto grid h-14 max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 sm:px-6 md:h-16 md:px-10 lg:px-14">
         <Link href="#top" className="shrink-0 justify-self-start" aria-label="Aediltech home">
-          <RotatingSymbol width={28} priority animate className="md:hidden" />
-          <RotatingSymbol width={34} priority animate className="hidden md:flex" />
+          <RotatingSymbol width={28} priority mode="once" className="md:hidden" />
+          <RotatingSymbol width={34} priority mode="once" className="hidden md:flex" />
         </Link>
 
         <nav
@@ -51,8 +51,8 @@ export function HomeHeader() {
           </button>
 
           <Link href="#top" className="shrink-0" aria-label="Aediltech home">
-            <RotatingSymbol width={28} animate className="md:hidden" />
-            <RotatingSymbol width={34} animate className="hidden md:flex" />
+            <RotatingSymbol width={28} mode="once" className="md:hidden" />
+            <RotatingSymbol width={34} mode="once" className="hidden md:flex" />
           </Link>
         </div>
       </div>
