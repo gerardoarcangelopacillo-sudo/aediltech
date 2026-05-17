@@ -1,5 +1,5 @@
 /**
- * Remote reference imagery (Unsplash / Pexels).
+ * Remote reference imagery (Pexels / Unsplash).
  * Replace URLs here when moving to owned photography.
  */
 
@@ -8,44 +8,44 @@ export type SiteImage = {
   alt: string;
 };
 
-const unsplash = (id: string, w = 1920) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=85`;
+const pexels = (id: number, w = 1920) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const images = {
   /** Technologies — robotic deposition cell */
   roboticPrinting: {
-    src: unsplash("1565043585406-32d53281c162"),
-    alt: "Industrial robotic arm operating in a precision manufacturing cell",
+    src: pexels(16544056),
+    alt: "Industrial robotic arm in a precision manufacturing environment",
   },
   /** Technologies — large-format additive process */
   polymerLfam: {
-    src: unsplash("1612815200920-2d02f1686622"),
-    alt: "Large-format additive manufacturing deposition head in operation",
+    src: pexels(4480501),
+    alt: "Large-format additive manufacturing equipment in an industrial facility",
   },
   /** Applications — material / structural texture */
   concretePrinting: {
-    src: unsplash("1618221196162-d05d2d97cad2"),
+    src: pexels(2219026),
     alt: "Layered concrete material surface with industrial texture",
   },
   /** Applications — manufacturing floor */
   manufacturingCell: {
-    src: unsplash("1504917596037-3226b08aea88"),
-    alt: "Automated manufacturing environment with industrial equipment",
+    src: pexels(373543),
+    alt: "Automated manufacturing floor with industrial production equipment",
   },
   /** Applications — tooling / metal fabrication */
   industrialTooling: {
-    src: unsplash("1581091226825-a6a2a5aee158"),
-    alt: "Engineer monitoring robotic systems in an industrial facility",
+    src: pexels(5532717),
+    alt: "Precision industrial machinery in a modern production environment",
   },
   /** Research — materials laboratory */
   researchMaterials: {
-    src: unsplash("1532187863488-ab08e6fdc024"),
+    src: pexels(4787780),
     alt: "Materials research laboratory with scientific instrumentation",
   },
   /** Applications — computational / grid aesthetic */
   computationalGrid: {
-    src: unsplash("1558494949-ef010cbdcc31"),
-    alt: "High-tech industrial workspace with digital manufacturing equipment",
+    src: pexels(1148820),
+    alt: "High-tech industrial workspace with digital manufacturing systems",
   },
 } as const satisfies Record<string, SiteImage>;
 
