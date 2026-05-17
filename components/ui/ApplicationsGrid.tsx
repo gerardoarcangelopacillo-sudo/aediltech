@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { imageLabels, images, type ImageKey } from "@/lib/images";
 import type { applications } from "@/lib/site";
 
 type Application = (typeof applications)[number];
@@ -9,30 +8,12 @@ type ApplicationsGridProps = {
   items: readonly Application[];
   showLink?: boolean;
   imageById?: Partial<Record<Application["id"], string>>;
-  imageKeyById?: Partial<Record<Application["id"], ImageKey>>;
 };
-
-function labelFor(
-  id: Application["id"],
-  imageKeyById: ApplicationsGridProps["imageKeyById"],
-  imageSrc?: string,
-) {
-  const key = imageKeyById?.[id];
-  if (key) return imageLabels[key];
-  if (imageSrc) {
-    const match = (Object.entries(images) as [ImageKey, string][]).find(
-      ([, path]) => path === imageSrc,
-    );
-    if (match) return imageLabels[match[0]];
-  }
-  return "Application";
-}
 
 export function ApplicationsGrid({
   items,
   showLink = true,
   imageById = {},
-  imageKeyById = {},
 }: ApplicationsGridProps) {
   return (
     <>
@@ -48,7 +29,6 @@ export function ApplicationsGrid({
                 <MediaImage
                   src={imageSrc}
                   alt={item.title}
-                  fallbackLabel={labelFor(item.id, imageKeyById, imageSrc)}
                   aspect="16/10"
                   className="rounded-none border-0 border-b border-border"
                 />

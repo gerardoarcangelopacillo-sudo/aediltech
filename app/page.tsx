@@ -17,15 +17,6 @@ const applicationImages = {
   "material-rd": images.researchMaterials,
 } as const;
 
-const applicationImageKeys = {
-  facades: "concretePrinting",
-  structures: "roboticPrinting",
-  interiors: "polymerLfam",
-  infrastructure: "concretePrinting",
-  tooling: "roboticPrinting",
-  "material-rd": "researchMaterials",
-} as const;
-
 export default function Home() {
   return (
     <>
@@ -55,14 +46,12 @@ export default function Home() {
         <div className="mb-16 grid gap-5 md:grid-cols-2 lg:gap-6">
           <MediaPanel
             src={images.roboticPrinting}
-            alt="Robotic additive manufacturing system placeholder"
-            fallbackLabel="Robotic deposition"
+            alt="Robotic additive manufacturing system"
             caption="Robotic deposition platform — reference"
           />
           <MediaPanel
             src={images.polymerLfam}
-            alt="Polymer large-format additive manufacturing placeholder"
-            fallbackLabel="Polymer LFAM"
+            alt="Polymer large-format additive manufacturing"
             caption="Polymer LFAM process — reference"
           />
         </div>
@@ -87,11 +76,7 @@ export default function Home() {
             Where our systems operate
           </h2>
         </div>
-        <ApplicationsGrid
-          items={applications}
-          imageById={applicationImages}
-          imageKeyById={applicationImageKeys}
-        />
+        <ApplicationsGrid items={applications} imageById={applicationImages} />
       </FullscreenSection>
 
       <FullscreenSection id="research">
@@ -117,8 +102,7 @@ export default function Home() {
           </div>
           <MediaPanel
             src={images.researchMaterials}
-            alt="Materials research laboratory placeholder"
-            fallbackLabel="Materials R&D"
+            alt="Materials research laboratory"
             caption="Material formulation & testing — reference"
             aspect="4/3"
           />

@@ -3,7 +3,6 @@ import { MediaImage, type MediaAspect } from "@/components/ui/MediaImage";
 type MediaPanelProps = {
   src: string;
   alt: string;
-  fallbackLabel: string;
   className?: string;
   caption?: string;
   aspect?: MediaAspect;
@@ -13,7 +12,6 @@ type MediaPanelProps = {
 export function MediaPanel({
   src,
   alt,
-  fallbackLabel,
   className = "",
   caption,
   aspect = "16/10",
@@ -21,13 +19,7 @@ export function MediaPanel({
 }: MediaPanelProps) {
   return (
     <figure className={`media-panel w-full ${className}`}>
-      <MediaImage
-        src={src}
-        alt={alt}
-        fallbackLabel={fallbackLabel}
-        aspect={aspect}
-        priority={priority}
-      />
+      <MediaImage src={src} alt={alt} aspect={aspect} priority={priority} />
       {caption && <figcaption className="media-panel-caption">{caption}</figcaption>}
     </figure>
   );

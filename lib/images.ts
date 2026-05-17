@@ -10,10 +10,3 @@ export const images = {
 } as const;
 
 export type ImageKey = keyof typeof images;
-
-export const imageLabels: Record<ImageKey, string> = {
-  roboticPrinting: "Robotic deposition",
-  concretePrinting: "Concrete printing",
-  polymerLfam: "Polymer LFAM",
-  researchMaterials: "Materials R&D",
-};
