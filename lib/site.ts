@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Aediltech",
+  brandTagline: "Advance Additive Manufacturing Technologies",
   tagline: "Advanced additive systems for built environments.",
   description:
     "Aediltech develops advanced additive manufacturing technologies, robotic systems and material solutions for architecture, construction, industry and design.",
@@ -13,6 +14,15 @@ export const navLinks = [
   { label: "Applications", href: "/applications" },
   { label: "Research", href: "/research" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+/** In-page anchors for the homepage fullscreen layout */
+export const homeSectionLinks = [
+  { label: "Technologies", href: "#technologies" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Applications", href: "#applications" },
+  { label: "Research", href: "#research" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const technologies = [
