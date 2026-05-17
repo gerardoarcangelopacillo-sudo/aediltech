@@ -1,7 +1,6 @@
 /**
- * Homepage section images in /public/images.
- * Replace SVG placeholders with JPG/PNG at the same basename when ready
- * (e.g. robotic-printing-placeholder.jpg).
+ * Paths match files in /public/images exactly.
+ * To swap in JPG/PNG later, add the file and update the path here.
  */
 export const images = {
   roboticPrinting: "/images/robotic-printing-placeholder.svg",
@@ -10,10 +9,11 @@ export const images = {
   researchMaterials: "/images/research-materials-placeholder.svg",
 } as const;
 
-/** JPG paths for production assets — swap `images` values when files are added. */
-export const imagePathsJpg = {
-  roboticPrinting: "/images/robotic-printing-placeholder.jpg",
-  concretePrinting: "/images/concrete-printing-placeholder.jpg",
-  polymerLfam: "/images/polymer-lfam-placeholder.jpg",
-  researchMaterials: "/images/research-materials-placeholder.jpg",
-} as const;
+export type ImageKey = keyof typeof images;
+
+export const imageLabels: Record<ImageKey, string> = {
+  roboticPrinting: "Robotic deposition",
+  concretePrinting: "Concrete printing",
+  polymerLfam: "Polymer LFAM",
+  researchMaterials: "Materials R&D",
+};
